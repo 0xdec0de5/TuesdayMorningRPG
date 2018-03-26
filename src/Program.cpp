@@ -37,7 +37,7 @@ bool do_attack(Player* player)
 	Actor* attacker = monster;
 	Actor* defender = player;
 
-	if (1==0 && roll <= 10)
+	if (roll <= 10)
 	{
 		//monster wins initiative
 		attacker = player;
@@ -70,7 +70,7 @@ bool do_attack(Player* player)
 		}
 
 		// Defenders's turn
-		has_retreated = defender->perform_action(attacker);
+		has_retreated |= defender->perform_action(attacker);
 
 		if (attacker->is_defeated())
 		{
